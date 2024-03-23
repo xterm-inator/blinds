@@ -1,0 +1,11 @@
+aiopulse==0.4.4
+async-timeout==4.0.2
+certifi==2023.5.7
+charset-normalizer==3.1.0
+docopt==0.6.2
+idna==3.4
+requests==2.31.0
+slack-bolt==1.18.0
+slack-sdk==3.21.3
+urllib3==2.0.3
+yarg==0.1.9
