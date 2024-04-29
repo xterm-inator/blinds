@@ -12,7 +12,11 @@ Go to https://api.slack.com/apps and create an app.
 
 Then edit the new app and create an App-Level Token with `connections:write` scope.
 
-Copy the token and set SLACK_BOT_TOKEN environment variable with it.
+Copy the token and set SLACK_APP_TOKEN environment variable with it.
+
+Next in the app settings enable Socket Mode.
+
+Then in the app Features OAuth & Permissions copy the Bot User OAuth Token and set SLACK_BOT_TOKEN to that.
 
 ### App
 
@@ -24,8 +28,10 @@ services:
     image: ghcr.io/xterm-inator/blinds:latest
     container_name: blinds
     restart: always
+    network_mode: "host"
     environment:
-      - SLACK_BOT_TOKEN=
+      - SLACK_BOT_TOKEN=xapp-
+      - SLACK_APP_TOKEN=xoxb-
 ```
 
 ### Blinds
